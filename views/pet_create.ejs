@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+	<title>SidePet - ペット作成</title>
+</head>
+<body>
+	<header>
+        <nav>
+            <div class="nav-wrapper orange darken-1">
+                <a href="/" class="brand-logo"><img src="/img/SidePet_WhiteText.png" alt="SidePet" width="150px"></a>
+            </div>
+        </nav>
+    </header>
+	<div class="container">
+		<h1>ペット登録ページ</h1>
+		<p>ログインしました(ID: <%= userid %>)</p>
+		<p>ペットを作成しましょう!</p>
+		
+		<form method="post" action="./pet_register">
+			<div>
+			<label>ユーザー名</label>
+				<input type="text" name="username" placeholder="ユーザー名" required>
+			</div>
+			<div>
+				<label>ペット名</label>
+				<input type="text" name="petname" placeholder="ペット名" required>
+			</div>
+			<div>
+				<p>ペットの種類</p>
+				<p>
+					<input type="radio" name="modelNo" value="0" id="model0">
+					<label for="model0">クマ</label>
+				</p>
+				<p>
+					<input type="radio" name="modelNo" value="1" id="model1">
+					<label for="model1">ネコ</label>
+				</p>
+				<p>
+					<input type="radio" name="modelNo" value="2" id="model2">
+					<label for="model2">ウサギ</label>
+				</p>
+			</div>
+			<br>
+			<div>
+				<p>ペットの色</p>
+				<table class="">
+		        <thead>
+		          <tr>
+		          		<th>番号</th>
+		              <th>クマ</th>
+		              <th>ネコ</th>
+		              <th>ウサギ</th>
+		          </tr>
+		        </thead>
+
+		        <tbody>
+		          <tr>
+		          	<td>
+						<input type="radio" name="modelSkin" value="0" id="skin0">
+						<label for="skin0">1</label>
+					</td>
+		          	<td>
+						<input type="radio" name="modelSkin" value="0" id="skin0">
+						<label for="skin0">青</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="0" id="skin0">
+						<label for="skin0">灰色</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="0" id="skin0">
+						<label for="skin0">薄緑</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" name="modelSkin" value="1" id="skin1">
+						<label for="skin1">2</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="1" id="skin1">
+						<label for="skin1">茶色</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="1" id="skin1">
+						<label for="skin1">緑</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="1" id="skin1">
+						<label for="skin1">ピンク</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="radio" name="modelSkin" value="2" id="skin2">
+						<label for="skin2">3</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="2" id="skin2">
+						<label for="skin2">マゼンタ</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="2" id="skin2">
+						<label for="skin2">オレンジ</label>
+					</td>
+					<td>
+						<input type="radio" name="modelSkin" value="2" id="skin2">
+						<label for="skin2">紫</label>
+					</td>
+				</tr>
+		        </tbody>
+		      </table>
+			</div>
+
+			<br>
+            <div>
+                <button type="submit" class="waves-effect waves-light btn">作成!</button>
+            </div>
+		</form>
+	</div>
+</body>

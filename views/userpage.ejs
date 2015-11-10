@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/materialize.css">
+	<link rel="stylesheet" href="/css/component.css">	
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="/css/slidebars.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script src="/js/jquery-1.11.3.min.js"></script>
+	<script src="/js/materialize.js"></script>
+	<script src="/js/three.min.js"></script>
+	<script src="/js/stats.min.js"></script>
+	<script src="/js/OrbitControls.js"></script>
+	<script src="/js/Detector.js"></script>
+	<script src="/js/Projector.js"></script>
+	<script src="/js/position.js"></script>
+	<script src="/js/jquery.balloon.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/petMotion.js"></script>
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script src="/js/classie.js"></script>
+	<script src="/js/gnmenu.js"></script>
+	<script src="/js/modernizr.custom.js"></script>
+	<script src="/js/slidebars.min.js"></script>
+   	<script src="/js/slidebars.js"></script>
+   
+
+
+	<title>ホーム</title>
+	<style>
+		body {
+			font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+			background-color: #f0f0f0;
+			margin: 0px;
+			
+		}
+        .main_wrapper {
+        	width:48%;
+
+			padding: 1em;
+			margin: 0.2em;			
+			border: 0.5em solid;         	
+        	border-color: rgb(208, 208, 208); 
+        	float:left;
+
+        }
+        .left_wrapper {  
+        	clear:both;
+        	      	
+        }
+		.right_wrapper {
+			float:left;
+		}
+		tr,td {
+			margin: 0.1em;
+			padding: 0.1em;
+		}
+		.btn {
+			margin: 0;
+			padding: 0 0.5em;
+			z-index: 0;
+		}
+		.menu_name {
+			text-align: center;
+			margin: auto;
+			padding: auto;
+		}
+		
+		@media screen and (max-width: 700px) {
+			.main_wrapper {
+	        	width:100%;
+				padding: 1em;
+				margin: 0.2em;			
+				border: 0.5em solid;         	
+	        	border-color: rgb(208, 208, 208);
+	        	clear:both;       	
+        	}
+        }
+		
+	</style>
+
+	
+</head>
+<body>
+	
+		<!-- Dropdown Structure -->
+
+	<ul id="dropdown1" class="dropdown-content">
+	  <li ><a href="#!" >Setting</a></li>
+	  <li><a href="#!">one</a></li>
+	  <li><a href="#!">two</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#!">three</a></li>
+	</ul>
+	<nav style="margin:0 0 0.2em 0">
+	  <div class="nav-wrapper">
+	    
+	    <ul class="left ">
+	    	<li><a class="dropdown-button" href="#!" data-activates="dropdown1" >
+	    	Menu<i class="material-icons right">arrow_drop_down</i></a></li>
+			
+	      <li><a href="#!" >Setting<i class="material-icons right" >settings</i></a></li>
+	      <li><a href="/history">History<i class="material-icons right">receipt</i></a></li>
+	      
+	    </ul>
+	  </div>
+	</nav>
+
+	<!--
+	<ul id="gn-menu" class="gn-menu-main">
+		<li class="gn-trigger">
+			<a class="gn-icon gn-icon-menu sb-toggle-left gn-icon"><span>Menu</span></a>
+			<nav class="gn-menu-wrapper">
+				<div class="gn-scroller">
+					<ul class="gn-menu">
+
+						<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+						<li><a class="gn-icon gn-icon-help">Help</a></li>
+						<li>
+							<a class="gn-icon gn-icon-archive">Archives</a>
+							<ul class="gn-submenu">
+								<li><a class="gn-icon gn-icon-article">Articles</a></li>
+								<li><a class="gn-icon gn-icon-pictures">Images</a></li>
+								<li><a class="gn-icon gn-icon-videos">Videos</a></li>
+							</ul>
+						</li>				
+					</ul>
+				</div>
+			</nav>
+		</li>
+		<li><a href="">Codrops</a></li>
+	</ul>
+	-->
+	<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a href="#test2">Test 2</a></li>
+        <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+    	<div class="main_wrapper left_wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th data-field="name">Name</th>
+						<th></th>					
+						<th data-field="number">Number</th>
+						<th data-field="price">Price</th>
+						<th data-field="subtotal">Subtotal</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="menu_name"><a class="waves-effect waves-light btn " onclick="count_Up(pi)">ピカンテ</a></td>
+						<td><a class="waves-effect waves-light btn red" onclick="count_Up(pi)"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue" onclick="count_Down(pi)"><i class="fa fa-chevron-down"></i></a> </td>
+						<td id="pi">0</td>
+						<td id="pi_p">400円</td>
+						<td id="pi_t">0</td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn">トルティーヤ</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>300円</td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn">ナッツのチョコがけ</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>150円</td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn">クレープのキヌアがけ</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>150円</td>
+					</tr>					
+					<tr>
+						<td><a class="waves-effect waves-light btn">マテ茶</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>100円</td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn">インカコーラ</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>130円</td>
+					</tr>
+					<tr>
+						<td><a class="waves-effect waves-light btn">チチャモラーダ</a></td>
+						<td><a class="waves-effect waves-light btn red"><i class="fa fa-chevron-up"></i></a>
+							<a class="waves-effect waves-light btn blue"><i class="fa fa-chevron-down"></i></a> </td>
+						<td>0</td>
+						<td>130円</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	<div id="right_wrapper" class="main_wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th data-field="name">Name</th>
+					<th></th>					
+					<th data-field="number">Number</th>
+					<th data-field="price">Price</th>
+					<th data-field="subtotal">Subtotal</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>ピカンテ</td>
+					<td></td>
+					<td>0</td>
+					<td>400円</td>
+					<td><a class="waves-effect waves-light btn" onclick="count_Up(pi)">ピカンテ</a></td>
+					
+				</tr>
+				<tr>
+					<td>トルティーヤ</td>
+					<td>0</td>
+					<td>300円</td>
+				</tr>
+				<tr>
+					<td>マテ茶</td>
+					<td>0</td>
+					<td>100円</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+    <div class="main_wrapper left_wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th data-field="name">Name</th>
+					<th></th>					
+					<th data-field="number">Number</th>
+					<th data-field="price">Price</th>
+					<th data-field="subtotal">Subtotal</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>ピカンテ</td>
+					<td>0</td>
+					<td>400円</td>
+				</tr>
+				<tr>
+					<td>トルティーヤ</td>
+					<td>0</td>
+					<td>300円</td>
+				</tr>
+				<tr>
+					<td>マテ茶</td>
+					<td>0</td>
+					<td>100円</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+    <div class="main_wrapper right_wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th data-field="name">Name</th>
+					<th></th>					
+					<th data-field="number">Number</th>
+					<th data-field="price">Price</th>
+					<th data-field="subtotal">Subtotal</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>ピカンテ</td>
+					<td>0</td>
+					<td>400円</td>
+				</tr>
+				<tr>
+					<td>トルティーヤ</td>
+					<td>0</td>
+					<td>300円</td>
+				</tr>
+				<tr>
+					<td>マテ茶</td>
+					<td>0</td>
+					<td>100円</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+    </div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+  </div>
+
+	
+            
+	<script>
+		//new gnMenu( document.getElementById( 'gn-menu' ) );
+		
+		$(document).ready(function (){
+			$('.dropdown-button').dropdown();
+			$('ul.tabs').tabs();
+		});
+		
+		
+		function count_Up(id) {		
+			$(id)[0].innerHTML = parseInt($(id).text()) +1;
+		}
+		function count_Down(id) {
+			if(parseInt($(id).text()) > 0)
+				$(id)[0].innerHTML = parseInt($(id).text()) -1;
+		}
+		
+		
+	</script>				
+			
+	
+</body>
+</html>
+
+
+	<!-- ペットの会話用ふきだし 
